@@ -81,7 +81,7 @@
         var repo = QueryString.user + "/" + QueryString.repo
         var url = apiRoot + "repos/" + repo + "/issues/" + QueryString.issue;
         //alert(url);
-        $.getJSON(url, showStats).fail(showStats);
+        $.getJSON(url).then(showStats);
     }
 
 
