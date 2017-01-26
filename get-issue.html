@@ -77,9 +77,14 @@
 
     function getStats() {
         var apiRoot = "https://api.github.com/";
-        //https://api.github.com/repos/octocat/Hello-World/issues/1347
-        var repo = QueryString.user + "/" + QueryString.repo
-        var url = apiRoot + "repos/" + repo + "/issues/" + QueryString.issue;
+        var url = "";
+        if (QueryString.length==0)
+        	url = https://api.github.com/repos/octocat/Hello-World/issues/1347
+        else
+        {
+        	var repo = QueryString.user + "/" + QueryString.repo
+        	url = apiRoot + "repos/" + repo + "/issues/" + QueryString.issue;
+    	}
         //alert(url);
         $.getJSON(url).then(showStats);
     }
